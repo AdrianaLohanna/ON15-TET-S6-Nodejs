@@ -5732,3 +5732,52 @@ const estados = [
         ]
       }
     ]
+// function buscarPorEstado(entrada) {
+//   let estado = []
+//   entrada = entrada.toLowerCase()
+//   estados.forEach(cidadesEncontradas => {
+//     let lista = cidadesEncontradas.sigla.toLowerCase()
+//     if (lista == (entrada)) {
+//       estado.push(cidadesEncontradas.cidadesEncontradas.toString())
+
+//     }
+
+//   })
+//   return estado
+// }
+
+// function BuscarCidades(entrada) {
+//   if (typeof (entrada) == "string") {
+//     let porCidade = buscarPorEstado(entrada)
+//     if(porCidade.length > 0)
+//     console.table("Cidades Encontradas por Estado:")
+  
+//     console.table("Nenhum item foi encontrado. Por favor, tente novamente!")
+//   } else {
+//     console.table('Não encontrado!')
+//   }
+// }
+
+// BuscarCidades("AC")
+
+
+// // console.log(cidades)
+// for (let i=0; i< estados.length; i++){
+//   let cidade = estados[i]
+//   console.log(cidade.nome)
+//   console.log(cidade.sigla)
+//   console.log(cidade.cidades)
+// }
+    
+function buscarPorEstado(entrada) {
+  entrada = entrada.toUpperCase()
+
+  estados.filter(filtrandoEstados => {
+    if(entrada == filtrandoEstados.sigla) {
+      console.log(`A sigla digitada foi: ${entrada}`)
+      console.log(`A lista de cidades é: ${filtrandoEstados.cidades.toString()}`)
+    }
+  })
+}
+
+buscarPorEstado("SE")
